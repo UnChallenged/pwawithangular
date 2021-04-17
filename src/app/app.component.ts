@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pwawithangular';
+
+  value = 'from business card demo';
+  //public myAngularxQrCode: string = 'www.google.com';
+  constructor(public dialog: MatDialog) {}
+  openQRDialog() {
+
+    this.dialog.open(DialogDataExampleDialog, {
+      data: {
+      }
+    });
+  }
+}
+@Component({
+  selector: 'qr-dialog',
+  templateUrl: 'qr-dialog.html',
+})
+export class DialogDataExampleDialog {
+  public myAngularxQrCode: string = 'www.google.com';
+  constructor() {}
 }
