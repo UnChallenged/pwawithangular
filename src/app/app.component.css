@@ -13,3 +13,11 @@ ul {
 h1, h2, a {
     color: black;
 }
+.desk{
+    width: 50%;
+    margin:0 auto; 
+}
+.mobi{
+    width: 100%;
+    margin:0 auto; 
+}
